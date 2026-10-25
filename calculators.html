@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Glo_mBun">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="skill damage calculators and the like">
+    <script src="skilldmgcalc.js"></script>
+    <link rel="icon" href="/icon.ico" type="image/x-icon" sizes="16x16" />
+    <link href="style.css" rel="stylesheet" type="text/css" media="all"> 
+    <title>♡ Calculators ♡</title>
+</head>
+  <body>
+    <p>
+      This page is under construction! please come back later.
+    </p>
+    <div>
+      <p>
+      notice any mistakes? maybe i misspelled something? maybe something is broken? maybe a skill is affected by something i didn't account for? 
+      message me! my discord is the.math.wizz 
+      I don't play every character and every class, I just do math. You know your character better than I do, so come tell me what I did wrong so I can fix it!
+      </p>
+      <input name="character" type="text" id='character' placeholder="Character Name"/>
+      <br><br>
+      <input name="charclass" type="text" id='charclass' placeholder="Class Name"/>
+      <br><br>
+      <button onclick="charactertest()">test</button>
+    </div>
+    
+<div>
+  <h3>Base Value:</h3>
+  <p>
+  The base damage % of your skill that your other stats are modifying. 
+  <br><br>
+  The total % damage for most skills can be found on Elwiki.
+  <br><br>
+  Similarly, the defense % of most major enemies can be found on Elwiki.
+  <br><br>
+  Why doesn't the demon realm debuff or adaptation change anything? 
+  <br><br>
+  The way skills work is they deal damage based on a % of your attack stat. 
+  If you have 100 physical attack and a skill does 500% physical attack damage, you will do 500 damage. 
+  Environmental debuffs decrease your actual attack stat. 
+  30% environmental debuff means that your attack power becomes 70, but the skill damage stays 500%. 
+  Right now, this calculator only calculates % damage rather than a numerical value, and the % remains the same regardless of environmental debuffs. 
+  The option to input environmental debuffs is here for my testing.
+  </p>
+  
+  <table border="0" cellpadding="5" cellspacing="5" width="500">
+    <tr align="center">
+      <th>Skill Dmg %:</th>
+      <th>Environmental Debuff:</th>
+    <tr align="center">
+      <td><input name="skilldmg" type="text" id='skilldmg'/></td>
+      <td><input name="demonrealmdebuff" type="text" id='demonrealmdebuff'/></td>
+    </tr>
+  </table>
+</div>    
+    
+<div>
+  <h3>Skill Damage Modifiers:</h3>
+  <p>
+  notes: please use the actual percentage values here rather than the equivalent decimal value
+  <br><br>
+  (ie. if you have 50% ASD please input "50" rather than ".5"
+  <br><br>
+  Also please note that Specific Skill Damage Increase is not the damage of the actual skill, but stats that affect specifically that skill.
+  <br><br>
+  (ie. reforge stacks or passives)
+  <br><br>
+  please note that as of a recent patch that changed the way reforge works, this is likely going to be 0 in most cases.
+  </p>
+  <table border="0" cellpadding="5" cellspacing="5" width="500">
+    <tr align="center">
+      <th>All Skill Damage:</th>
+      <th>Skill Tier Damage:</th>
+      <th>Specific Skill Damage Increase:</th>
+    </tr>
+    <tr align="center">
+      <td><input name="asd" type="text" id='asd'/></td>
+      <td><input name="skilltier" type="text" id='skilltier'/></td>
+      <td><input name="skillstack" type="text" id='skillstack'/></td>
+    </tr>
+  </table>
+</div>
+
+<div>
+      <h3>Critical Chance and Damage:</h3>
+      <table border="0" cellpadding="5" cellspacing="5" width="500">
+          <tr align="center">
+            <th>Critical Chance:</th>
+            <th>Critical Damage:</th>
+          </tr>
+          <tr align="center">
+            <td><input name="currentcrit" type="text" id='currentcrit'/></td>
+            <td><input name="critdmg" type="text" id='critdmg' placeholder="150"/></td>
+          </tr>
+          <tr>
+            <td align="center" colspan="5">
+            <button onclick="skilldmgtest()">test</button>
+            </td>
+          </tr>
+        </table>
+    </div>
+    <div>
+      <p id="dmgoutput">
+        placeholder
+      </p>
+      <p id="not100warning">
+        placeholder
+      </p>
+    </div>
+  </body>
+</html>

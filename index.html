@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Glo_mBun">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="stat calculator for normalization and stuff">
+    <script src="normalization-calculator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="/icon.ico" type="image/x-icon" sizes="16x16" />
+    <link href="style.css" rel="stylesheet" type="text/css" media="all"> 
+    <title>♡ Gloomy's Stat Calculator V 0.2 ♡</title>
+</head>
+
+<body>
+  
+<header>
+  <div class="center"> 
+  <br>
+    <a href="/" style="position:relative;">
+        <img id="header-name" src="Sitename_window.png" width="50%"></a>
+  </div>
+  
+  <div class="headimg">
+    <a href="/hedgehog">
+        <img id="header-image" src="Lu.png" style="width:228PX;"></a>
+  </div>
+</header>  
+
+<div class="map">
+  <br><br>
+  <a href="/basics">
+    <img id="basic"
+    src="sitemap/Basic_Stat.png" 
+    onmouseover="this.src='sitemap/Basic_Stat_H.png'; 
+    document.getElementById('clicky').play();" 
+    onmouseout="this.src='sitemap/Basic_Stat.png'" 
+    style="width:128px;">
+  </a>
+  <a href="/calculators">
+    <img id="calcs" 
+    src="sitemap/Calcs.png" 
+    onmouseover="this.src='sitemap/Calcs_H.png'; 
+    document.getElementById('clicky').play();" 
+    onmouseout="this.src='sitemap/Calcs.png'" 
+    style="width:128px;">
+  </a>
+  <a href="/equipment">
+    <img id="equip" 
+    src="sitemap/Equip.png" 
+    onmouseover="this.src='sitemap/Equip_H.png'; 
+    document.getElementById('clicky').play();" 
+    onmouseout="this.src='sitemap/Equip.png'" 
+    style="width:128px;">
+  </a>
+  <a href="/new-players">
+    <img id="New" 
+    src="sitemap/New_Player.png" 
+    onmouseover="this.src='sitemap/New_Player_H.png'; 
+    document.getElementById('clicky').play();" 
+    onmouseout="this.src='sitemap/New_Player.png'" 
+    style="width:128px;">
+  </a>
+  <a href="/resources">
+    <img id="Resources" 
+    src="sitemap/Resources.png" 
+    onmouseover="this.src='sitemap/Resources_H.png'; 
+    document.getElementById('clicky').play();" 
+    onmouseout="this.src='sitemap/Resources.png'" 
+    style="width:128px;">
+  </a>
+</div>
+
+<div class="center">
+  <h1>Calculating Buffs and Stuff</h1>
+</div>
+
+<br><br>
+
+<div class="section">
+  <details>
+		<summary>Normalization:</summary>
+		<div class="container">
+		  <p>
+		    The more you have of a stat, the less effective gaining more becomes. 
+		    After you have a certain percentage, every % you gain after only counts for less than 100%, and then it continues to drop.
+		    Please refer to <a href="https://ashal.eu">Ashal</a> for a good explanation of this.
+		    <br><br>
+		    different stats have different threshholds for their efficiencies, so please make sure you're using the correct button.
+		  </p>
+		</div>
+		<div class="center">
+      <table border="0" cellpadding="5" cellspacing="5" width="450">
+        <tr align="center">
+         <th>Raw Stat:</th>
+         <th>Normalized Stat:</th>
+        </tr>
+        <tr align="center">
+          <td><input name="rawstat" type="text" id='rawstat'/></td>
+          <td><input type="text" id='test' readonly></td>
+        </tr>
+        <tr>
+          <td align="center" colspan="2">
+            <button onclick="showresult('1')">Calculate Maximize</button>
+            <button onclick="showresult('2')">Calculate Critical</button>
+            <button onclick="showresult('3')">Calculate Red. Damage</button>
+          </td>
+        </tr>
+      </table>
+      <br>
+    </div>
+  </details>
+</div> <!-- Basic Normalization -->
+
+<div class="section">
+  <details>
+    <summary>How Much Do I Need to Socket?</summary>
+      <div class="center">
+      <br>
+        <table border="0" cellpadding="5" cellspacing="5" width="500">
+          <tr align="center">
+            <th>Current Stat:</th>
+            <th>Needed Stat:</th>
+            <th>You Need:</th>
+          </tr>
+          <tr align="center">
+            <td><input name="currentstat" type="text" id='currentstat'/></td>
+            <td><input name="neededstat" type="text" id='neededstat'/></td>
+            <td><input type="text" id='socket' readonly/></td>
+          </tr>
+          <tr>
+            <td align="center" colspan="3">
+            <button onclick="showSocketingResult('1')">Calculate Maximize</button>
+            <button onclick="showSocketingResult('2')">Calculate Critical</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="center">
+        <p>(side note, this will not work if you have more than you need.)</p>
+        <p>Hey! How do I know how much of a stat I need?<br/><a href="https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vQkHyGXROrJ0TUrax6T5h2Sc0dta9p3xCh-Jwl_z_4l22bEEB44k03xZ9tSfvnpZWyTHTgYYqN-tFIV/pubhtml?pli=1#">There's a Google Sheet for that!</a></p>
+      </div>
+  </details>
+</div> <!-- How Much Do I need to Socket? -->
+
+<div class="section">
+  <details>
+    <summary>Additive VS Multiplicative Stats:</summary>
+    <div class="container">
+      <p>
+        While checking certain stats, skills, buffs, etc. on Elwiki, you might have noticed that there's either a little <img src="addative.png" style=height:13px;> or <img src="multiplicative.png" style=height:13px;> icon that dictates whether something is calculated <b>Additively</b> or <b>Multiplicatively</b>.
+        <br><br> 
+        Here's how they work:
+      </p>
+      <br>
+        <h3>Additive Stats:</h3>
+         <p>
+        This is typically found in percentage-based stats such as Maximize or Critical Chance. It's added directly to the stat before any multipliers, and is affected by Normalization.
+        <br><br>
+        It can be measured with a simple:
+        <br><br>
+        base stat + additive stat = final stat
+        <br><br>
+        For Example, Catastrophe's passive, "Awakened Will: Dreadlord" has an additive Critical Chance increase of 15%. We're going to use a theoretical 50% (unnormalized) critical chance from other sources. 
+        <br><br>
+        It would calculate like this:
+        <br><br>
+        15% + 50% = 65% (unnormalized) = 60% (normalized)
+      </p>
+      <br>
+        <h3>Multiplicative Stats:</h3>
+        <p>
+        This is most commonly found in buffs, or passives that affect a character's stats situationaly. It multplies the final (normalized) stat by it's value. The increase from these kinds of buffs are not normalized.
+        <br><br>
+        They can be measured with a simple:
+        <br><br>
+        (normalized stat) * (1 + multiplicative buff) = final stat
+        <br><br> 
+        A good example of this is Doom Bringer's "Awakened Will: Lunatic Psyker", which provides a 20% multiplicative Critical Chance while he's awakened. Again, we're going to use a theoretical 50% (unnormalized) critical chance from other sources. 
+        <br><br>
+        Here's how it'd calculate:
+        <br><br>
+        48% (normalized) * (1 + 0.20) = 60%
+      </p>
+      <br>
+      <p><i>Funny how those end up as the same percentage, huh?</i></p>
+    </div>
+  </details>
+</div> <!-- "Additive and Multiplicative Damage" -->
+
+<div class="section">
+  <details>
+    <summary>Additive VS Multiplicative Critical Damage:</summary>
+    <div class="container">
+      <p>
+        For whatever reason, the game calculates critical damage the other way around. 
+        <br><br>
+        It follows this formula:
+        <br><br>
+        critical damage = ((1.5 * multiplicative) + additive)
+        <br><br>
+        Using both Luciel's Aura of Punishment and Herrscher's Chaos Barrier buff would go roughly like this:
+        <br><br>
+        ((1.5 * (1 + .2)) + .23) = 203% critical damage
+      </p>
+    </div>
+  </details>
+</div> <!-- "Additive and Multiplicative Critical Damage" -->
+
+<div class="section">
+  <details>
+    <summary>"is 5% of stat a better or is 5% of stat b better?":</summary>
+    <div class="container">
+      <p>
+        Almost all stats in this game act as an independent multiplier. 
+        This mean that when calculating your damage, they're all multiplied without any weird adding going on. 
+        So your damage is something like this:
+        <br><br>
+        your atk * crit dmg * boss dmg * polarize * asd * skill tier dmg * etc..
+        <br><br>
+        since all of the individual components are calculated independently, the optimal stat to invest into is the one you have the least of. 
+        If you have 10% polarize, 40% asd, and 8% boss dmg, the largest increase to your stats will come from 5% more boss dmg rather than 5% more asd. 
+        <br><br>
+        So basically, make the smallest number bigger.
+        <br><br> 
+        It works like this because the added 5% is 62.5% of 8%, but only 12.5% of 40%. 
+        Even though the additive difference is the same, the multiplicative difference is much higher on the smaller number. 
+        <br><br>
+        It can get slightly harder to figure out when you have different increases that you're comparing. 
+        5% boss dmg vs 5% asd is relatively simple, but 3% boss dmg vs 7% asd can be harder to immediately see since you can't just go with the smaller number. 
+        In this case, you'd want to calculate the multiplicative increase of each.
+        <br><br>
+        (percent increase) / (existing percentage)
+        <br><br>
+        (3% boss dmg) / (8% boss dmg) is a 37.5% increase.
+        <br><br>
+        (7% asd) / (40% asd) is a 17.5% increase.
+        <br><br>
+        Even though the 7% is a larger additive difference than 3%, its still a smaller multiplicative difference. 
+        You can't take this to mean that an increase to the smaller number is always going to be a larger multiplicative increase. 
+        That would be stupid. 
+        If it was a 15% increase rather than a 7%, the multiplicative increase would end up the same for both cases. 
+        When in doubt, just do the math for it.
+      </p>
+    </div>
+  </details>
+</div> <!-- "is 5% of stat a better or is 5% of stat b better?" -->
+
+<div class="section">
+  <details>
+    <summary>Damage Increase by CDR vs Raw Damage Increase:</summary>
+    <div class="container">
+      <p>
+        (lurky this is for you)
+        <br><br>
+        Raw damage increase seems like the obvious choice for dealing more damage. However, when you cast skills multiple times, CDR can help you deal more damage.
+        <br><br>
+        CDR, simply put, means you can cast skills more times over a specified time period, increasing your overall damage the longer you continue to cast skills.
+        <br><br>
+        the gap between the two increases the longer you cast skills
+        <br><br>
+        still, depending on the actual numbers, raw attack increase can have a greater impact on your damage.
+        <br><br>
+        notes on this graph: please enter both stats as percentage values (so "35" rather than ".35"). cooldown is in seconds.
+      </p>
+      <p>
+        note: titles kept breaking it for some reason?
+        <br><br>
+        the x axis is time spent attacking (in minutes) and the y axis is damage dealt relative to casting the skill once.
+      </p>
+      
+      <table border="0" cellpadding="5" cellspacing="5" width="500">
+      <tr align="center">
+        <th>Raw Damage Increase:</th>
+        <th>Cooldown Reduction:</th>
+        <th>Cooldown Time (seconds):</th>
+      </tr>
+      <tr align="center">
+        <td><input name="damageincrease" type="text" id='damageincrease'/></td>
+        <td><input name="cooldownreduction" type="text" id='cooldownreduction'/></td>
+        <td><input name="basecooldown" type="text" id='basecooldown'/></td>
+      </tr>
+      </table>
+      <br><br>
+      <canvas id="CDRvsDMG" style="width:100%;max-width:700px"></canvas>
+      <br><br>
+      <button onclick="updateGraph()">Calculate</button>
+      
+    </div>
+  </details>
+</div> <!-- CDR vs Damage Increase -->
+
+<br><br>
+
+<div class="section">
+  <details>
+    <summary>Specific Skill DMG vs. ASD:</summary>
+    <div class="container">
+      <p>
+        This one was a very quick test to see how much specific skill dmg increase vs asd affected damage before the patch that changed reforge effects. It doesn't have many practical uses outside of that.
+        <br><br>
+        If you want an explanation for why this occurs, please refer to <a href= https://ashal.eu/faq#effectiveness>Ashal's Site.</a>
+      </p>
+      <table border="0" cellpadding="5" cellspacing="5" width="500">
+      <tr align="center">
+        <th>ASD:</th>
+        <th>Specific Skill DMG increase:</th>
+        <th>Skill Tier DMG (bravery, strength, tenacity, etc.):</th>
+      </tr>
+      <tr align="center">
+        <td><input name="allskilldmg" type="text" id='allskilldmg'/></td>
+        <td><input name="specskilldmg" type="text" id='specskilldmg'/></td>
+        <td><input name="skilltierdmg" type="text" id='skilltierdmg'/></td>
+      </tr>
+      </table>
+      <br><br>
+      <canvas id="ASDvsSPEC" style="width:100%;max-width:700px"></canvas>
+      <br><br>
+      <button onclick="updateGraph2()">Calculate</button>
+      
+    </div>
+  </details>
+</div> <!-- Specific Skill DMG vs. ASD -->
+
+<br><br>
+
+<div class="footer">
+  <h2> External Links </h2>
+    <a href="https://ashal.eu"><img src="Ashal.png" style="width:42px;height:42px;"/></a>
+</div>
+
+</body>
+</html>

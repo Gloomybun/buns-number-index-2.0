@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Glo_mBun">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="stat calculator for normalization and stuff">
+    <script src="normalization-calculator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="/icon.ico" type="image/x-icon" sizes="16x16" />
+    <link href="style.css" rel="stylesheet" type="text/css" media="all"> 
+    <title>♡ Basic Stats ♡</title>
+  </head>
+
+<body>
+    
+<h1>Basics</h1>
+
+<div class="section">
+  <details>
+    <summary>MP (and related stats):</summary>
+      <div class="container">
+        <h3>MP</h3>
+        <p>
+        The first stat at the top of your stats list is simply labeled "MP". A more accurate name for it would be max MP.
+        <br><br>
+        This is the absolute most MP you can hold at any given time. It can be increased with passives, ERP, and certain accessories and gear. 
+        Generally, there is no need to increase it beyond whatever your class's passives give you.
+        <br><br>
+        You consume MP when casting skills. 
+        The MP cost of a skill can be determined by checking its in-game tooltip.
+        </p>
+        <h3>Skill MP Cost Decrease</h3>
+        <p>
+        This is pretty self explanatory. Skills will cost less MP to cast based on this stat. 
+        You can easily figure out how much MP a skill is going to cost using this formula:
+        <br><br>
+        (MP cost according to stat window) x (1-skill MP cost decrease)
+        </p>
+        <h3>MP Recovery When Attacking/Attacked</h3>
+        <p>
+        You gain a certain amount of MP whenever you deal a hit, and a certain amount whenever you take a hit, similar to awakening.
+        <br><br>
+        These two stats increase the amount of MP you gain per hit.
+        </p>
+      </div>
+  </details>
+</div> <!-- MP -->
+
+<div class="section">
+  <details>
+    <summary>Critical Chance and Critical Damage:</summary>
+      <div class="container">
+        <p>
+          Similar to most other games, elsword has "critical attacks", which deal more damage than normal attacks. 
+          You can increase the odds of performing a critical attack by increasing your <bold>"critical chance"</bold>, which is sometimes just referred to as your <bold>"critical"</bold> stat. 
+          <br><br>
+          Critical damage increases the damage you do per critical hit. By default, this is 150%, however it can be increased.
+          <br><br>
+          Some classes have passives that grant them critical chance or critical damage increases that don't show up in the stat window. 
+          This means that in most scenarios, you need less that 100% critical chance in the stat window to actually have 100% critical chance.
+          Certain classes have buffs that also grant critical chance or damage situationally, such as when awakened or when a skill is cast.
+          In a well-formed raid party, you will likely need less than 100% critical chance (in both the stat window and from passives) to actually crit 100% of the time.
+          <br><br>
+          A spreadsheet containing all of the classes' "necessary" critical stats<a href="https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vQkHyGXROrJ0TUrax6T5h2Sc0dta9p3xCh-Jwl_z_4l22bEEB44k03xZ9tSfvnpZWyTHTgYYqN-tFIV/pubhtml?pli=1#"> can he found here.</a>
+          <br><br>
+          ("necessary" being how much is needed in the stat window taking into account buffs and passives)
+        </p>
+      </div>
+  </details>
+</div> <!-- critical -->
+
+<div class="section">
+  <details>
+    <summary>Physical/Magical Attack Power and Maximize:</summary>
+      <div class="container">
+        <p>
+          In Elsword, there are 2 types of damage: 
+          <bold>Magical damage</bold>, commonly referred to as <bold>matk</bold>, and <bold>physical damage</bold>, commonly referred to as <bold>patk</bold>.
+          <br><br>
+          Every class does only one type of damage. 
+          A magical class will only deal magical damage, and a physical class will only deal physical damage.
+          This is important to keep in mind when increasing your damage with various stats like physical attack level or magical attack %.
+          A physical character will not benefit from magical attack % increase and vice versa.
+          <br><br>
+          This is also true for support buffs, such as Celestia's Aquarius card, which increases magical attack power.
+          This is why raid parties will typically be either entirely physical or entirely magical.
+          <br><br>
+          When viewing your patk and matk in the stat window, you can hover over it to view your attack range. 
+          Rather than having a specific number as your attack, the game will roll the dice and deal damage based on a random number in your attack range. 
+          This is calculated individually with each hit, so it's possible for one hit of a skill to do much more damage than another hit of the same skill.
+          <br><br>
+          Your "maximize" stat increases your lower limit, and brings it up closer to your upper limit.
+          This makes your average damage higher, and makes your damage output more consistant.
+          <br><br>
+          For example, if your "upper limit" was 100 damage and your "lower limit" was 1, you could deal anywhere from 1 to 100 damage with each hit.
+          With 50% maximize, you could deal anywhere from 50 to 100 damage, with 70% you could deal anywhere from 70 to 100, and so on. 
+          <br><br>
+          Similarly to crit rate, you idealy want 100% maximize so that you deal anywhere from 100 to 100 damage all the time.
+          Also similarly to crit rate, most classes have passives or buff skills that give them maximize that does not appear in the stat window. 
+          This means you need less than 100% maximize in the stat window to actually have 100% maximize.
+          <br><br>
+          in order to figure out how much maximize you truly need, you can refer to <a href="https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vQkHyGXROrJ0TUrax6T5h2Sc0dta9p3xCh-Jwl_z_4l22bEEB44k03xZ9tSfvnpZWyTHTgYYqN-tFIV/pubhtml?pli=1#">this spreadsheet.</a>
+        </p>
+      </div>
+  </details>
+</div> <!-- maximize and attack power -->
+    
+<div class="section">
+  <details>
+    <summary>Awakening Charge Speed, Time, and Other Things:</summary>
+      <div class="container">
+      <p>
+        You're first introduced to awakening in the tutorial of the game, where it allows you to defeat the boss of the tutorial dungeon. For characters that don't have awakening-specific systems, there will typically be 3 "beads" under your character's portrait on the top left of your screen. You can awaken with any amount of beads, but the more you have, the longer the awakening will last. By default, it lasts 30 seconds per bead. 
+        <br><br>
+        There is also a green bar by your awakening beads. This shows how close you are to gaining another bead. Typically, you need to hit an enemy 100 times or be hit 50 times to fill this gauge. This can be decreased depending on your <bold>"Awakening Charge Speed"</bold> stat. The more awakening charge speed you have, the more this gauge fills up per hit.
+        <br><br>
+        For characters that don't have awakening-specific systems, you gain a 30% attack power increase. This means it's important, especially late game, to keep your uptime at 100%: if you are not awakened, awaken. 
+        <br><br> 
+        Some characters have awakening specific systems or bonuses. 
+      </p>
+    
+      <details>
+        <summary>Add</summary>
+          <p>
+          Instead of having awakening beads, Add has a "DP" bar, which looks kind of like a purple MP bar under his actual MP bar. You consume an initial 50 DP upon awakening, followed by 5 DP per second that you maintain awakening. You cannot gain DP while attacking if you are awakened. Hitting the awakening key (ctrl by default) again will de-activate awakening. Some skills consume DP along with MP: the DP cost of these skills will be discounted while in awakening mode. 
+         </p>
+      </details>
+      
+      <details>
+        <summary>Ain</summary>
+          <p>
+          Ain has a singluar awakening bead, which fills up as normal as you attack or get attacked. His awakening comes in "phases", which can be progressed by awakening while already awakened. Each phase will grant increasing buffs (ie. increasing critical chance or maximize). He has a total of 3 phases. Re-awakening while in phase 3 will extend his awakening time.
+         </p>
+      </details>
+      
+      <details>
+        <summary>Laby</summary>
+          <p>
+          Upon filling her awakening gauge, Laby awakens automatically. Instead, her [ctrl] button (or other awakening key) will trigger a skill-like attack that deals damage and applies the "groggy" debuff to the enemies hit.
+         </p>
+      </details>
+      
+      <details>
+        <summary>Noah</summary>
+          <p>
+          Noah has 3 different moon phases, each triggering a different effect upon awakening. These phases can be changed by casting skills, and can be overridden by awakening again. Each class favors a different moon phase, granting different skill effects and buffs depending on the phase of the moon.
+         </p>
+      </details>
+      </div>
+  </details>
+</div> <!-- awakening -->
+
+
+
+
+<div class="section">
+  <details>
+    <summary>Adaptation:</summary>
+      <div class="container">
+        <p>
+          There's a debuff that automatically applies to your character when you enter dungeons after a certain point.
+          It begins in Varnimyr, and increases in intensity the further you progress into the demon realm.
+          The "Demon Realm Debuff" decreases your Attack Power, HP, and Defense.
+          <br><br>
+          "Adaptation" offsets this debuff. 
+          <br><br>
+          Adaptation directly decreses the debuff, % for %.
+          This means if the debuff is 40% and you have 28% adaptation, you only experience a 12% debuff.
+          Adaptation is crucial for both offense and survivability.
+          It caps at 55%, which is the percentage you should aim for.
+        </p>
+      </div>
+  </details>
+</div> <!-- adaptation -->
+
+<div class="section">
+  <details>
+    <summary>Passive, Active, and Special Active Skills:</summary>
+      <div class="container">
+        <p>
+          You might have noticed that different skills have different "tiers" or types.
+          Each skill has a skill tier which is noted in their skill description.
+          <!-- note, insert image here --><br><br>
+          Additionally, each skill tier also has a corresponding color that borders the skill. 
+          <!-- note, insert image here --><br><br>
+          Various stats, gear, accessories, or even class passives only apply to certain skill tiers or types.
+          Different skill types and tiers can also affect certain gameplay mechanics differently.
+          The 3 <bold>main</bold> skill types are Passives, Actives, and Special Actives.
+          (though, there are others. please refer to the <bold>"other skill types"</bold> section for more information)
+          <br><br>
+          Passives are applied by default. 
+          Some passives have a trigger condition or simply affect another skill, but you don't need to equip a passive to get its benefits.
+          They are always active, providing some sort of buff or effect.
+          <br><br>
+          Active skills need to be cast, though they have a low mp cost and low cooldown time. 
+          Actives deal "grey" damage (in reference to the spikes in Never Ending Darkness which can only be destroyed with commands and actives).
+          You must add an active skill to your skill bar in order to use it.
+          Items and buffs that increase the damage of active skills often refer to them as "flexibility" skills.
+          <br><br>
+          Special Active skills, similarly to active skills, must be placed in the skill bar and cast in order to be used. 
+          They deal "red" damage (in reference to the spikes in Never Ending Darkness which can only be destroyed with special actives).
+          Special actives are further split into 3 tiers: Tenacity, Strength, and Bravery. For the most part, these are decided based on the skill's MP cost.
+          <br><br>
+          Tenacity skills are the step up from active skills. 
+          They have the lowest MP cost of all the Special Active tiers. 
+          When color coded in places such as Altar of Invocation, they correspond with the color <bold>blue</bold>.
+          <br><br>
+          Strength skills, while next in terms of MP cost, sometimes deal the highest damage. 
+          Some classes favor strength skills opposed to bravery skills.
+          When color coded they correspond with the color <bold>purple</bold>.
+          <br><br>
+          Bravery skills have the highest MP cost, and often (but not always) deal the highest damage. 
+          when color coded they correspond with the color <bold>red</bold>.
+          <br><br>
+          certain items in the game (such as skill rings) affect only one of the skill tiers rather than skills as a whole.
+          make sure you know what skill tier your class favors.
+          <br><br>
+          ASD (or All Skill Damage) increases the damage of <bold>all</bold> active and special active skills. 
+        </p>
+      </div>
+  </details>
+</div> <!-- Passives, Actives, and Special Actives -->
+
+<div class="section">
+  <details>
+    <summary>Other Skill Types:</summary>
+      <div class="container">
+        <p>
+        Some characters have designated "buff" skills. These "buff" skills are not affected by any modifiers such as ASD or skill rings. 
+        Buff skills do exactly wha they say; they apply a buff to your (and sometimes your allies) character.
+        You must place a buff skill in your skill bar and cast it to use, much like an active or special active.
+        <br><br><br>
+        Additionally, there are also Hyperactive skills. Every class has 2 hyperactives which need to be unlocked with a series of quests. 
+        You gain one hyperactive upon finishing the quests at lv. 65, and another upon finishing the quests at lv 99. 
+        Hyperactives do not take up normal skill slots and instead have a designated slot next to the skill bar.
+        <br><br>
+        The majority of classes do not benefit from using their hyperactive, however certain classes (such as Celestia or Metamorphy) require them to play properly.
+        Hyperactives are not affected by most modifiers (such as ASD or skill rings), however, they can be affected by "Hyperactive Skill Damage Increase" buffs.
+        <br><br><br>
+        Finally, there are Master Skills. 
+        Classes can unlock their master skill after achieving Master Class. 
+        Master skills come in 4 stages, each with increasingly complicated visuals and more damage or other affects. 
+        Each stage of a master skill must be unlocked with a quest, however previous stages of a skill can still be used.
+        <br><br>
+        Similarly to hyperactives, master skills have a designated slot next to the player's skill bar. 
+        They are not affected by normal modifiers, howver they can be affected by master skill specific modifiers such as "Master Skill Damage Increase".
+        <br><br>
+        Most classes don't need their master skill in order to play properly. 
+        Classes that do use it typically treat it as just another skill rather than something grandiose.
+        </p>
+      </div>
+  </details>
+</div> <!-- Other Skill Types -->
+
+<div class="section">
+  <details>
+    <summary>Knowing When to Quit the Game:</summary>
+      <div class="container">
+        <p>
+        I might constantly sing praise for this game but it is far from perfect. Hell, it's far from being a good game at all.
+        Don't keep going in hopes that it will get better and you will have fun as soon as you break that one gear wall or as soon as you can deal damage.
+        It's not going to get better. 
+        <br><br>
+        I fullheartedly believe the only people who enjoy this game are clinically insane. 
+        Yeah I'm included in that or whatever i mean you're literally on a site dedicated to math for this game did you seriously think i was normal.
+        <br><br>
+        This game is also really predatory and gambling heavy. 
+        Don't play this if you aren't prepared to make this your entire life and spend all of your money on it.
+        <br><br>
+        If you choose not to heed my warning and play anyway, the best advice I can give you is to just stay midgame. 
+        Find some people you like to play with and stay far, far away from anything gear-walled or something that requires minmaxing.
+        
+        </p>
+      </div>
+  </details>
+</div> <!-- Knowing When to Quit. -->
+
+</body>
+</html>
