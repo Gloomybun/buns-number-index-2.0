@@ -1,16 +1,76 @@
 /*fonts and housekeeping*/
 @font-face {
-  font-family: 'witch';
-  src: url('fonts/witch.ttf') format('truetype');
-  }
+	font-family: 'witch';
+	src: url('fonts/witch.ttf') format('truetype');
+}
 @font-face {
-  font-family: 'cherish';
-  src: url('https://gloomys-stat-calculator.neocities.org/fonts/cherish.ttf') format('truetype');
+	font-family: 'cherish';
+	src: url('fonts/cherish.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'cherrybomb';
+	src: url('fonts/CherryBombOne.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'darumadrop';
+	src: url('fonts/DarumadropOne.ttf') format('truetype');
+}
+
+html, body {
+  &::-webkit-scrollbar {
+    display: none;
   }
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
 
 #flex {
   display: flex;
 }
+
+.site-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.site-main {
+  opacity: 1.0 !important;
+  transform: none !important;
+  transition: none !important;
+  filter: none !important;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  z-index: 1;
+}
+
+.site-main > .inner {
+  --border-radius-tl: calc(0.75rem - 4px);
+  --border-radius-tr: calc(0.75rem - 4px);
+  --border-radius-br: calc(0.75rem - 4px);
+  --border-radius-bl: calc(0.75rem - 4px);
+  border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0rem 0rem;
+  }
 
 /*headers*/
 header {
@@ -54,7 +114,22 @@ body {
 }
 
 .iframewarn{
-  font-size: 14px;
+  font-size: .5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.iframecontent {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.hypotheticalquestion {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-style: italic;
+	text-align: right;
 }
 
 main {
@@ -204,34 +279,7 @@ iframe {
   width: 100%;
 }
 
-.site-wrapper {
-  -webkit-overflow-scrolling: touch;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 80vh;
-  overflow: hidden;
-  position: relative;
-  z-index: 2;
-  padding: 1rem 1rem 1rem 1rem;
-}
 
-.site-main {
-  opacity: 1.0 !important;
-  transform: none !important;
-  transition: none !important;
-  filter: none !important;
-  align-items: center;
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
-  justify-content: center;
-  max-width: 100%;
-  position: relative;
-  text-align: left;
-  z-index: 1;
-}
 
 .update-warning {
 	margin-bottom: 0.5rem;
@@ -294,4 +342,9 @@ iframe {
     padding: 20px;
     order: 2;
   }
+  
+  .iframewarn {
+	font-size: 14px;
+  }
+  
 }
