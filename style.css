@@ -209,7 +209,7 @@ iframe {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 80vh;
   overflow: hidden;
   position: relative;
   z-index: 2;
@@ -230,6 +230,10 @@ iframe {
   position: relative;
   text-align: left;
   z-index: 1;
+}
+
+.update-warning {
+	margin-bottom: 0.5rem;
 }
 
 @media screen and (min-width: 600px) {
