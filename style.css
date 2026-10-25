@@ -203,6 +203,35 @@ iframe {
   width: 100%;
 }
 
+.site-wrapper {
+  -webkit-overflow-scrolling: touch;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.site-main {
+  opacity: 1.0 !important;
+  transform: none !important;
+  transition: none !important;
+  filter: none !important;
+  align-items: center;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+  max-width: 100%;
+  position: relative;
+  text-align: left;
+  z-index: 1;
+}
+
 @media screen and (min-width: 600px) {
   #i-box-flex {
     display: flex;
