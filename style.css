@@ -40,8 +40,9 @@ header {
 /*the main things*/
 body {
   cursor: url("Cursors/cursor32.png"), auto;
-  background: url("background.png");
+  background: url("background.jpeg");
   background-attachment: fixed;
+  background-size: cover;
   display: flex;
   padding: 15px;
 	flex-direction: column;
