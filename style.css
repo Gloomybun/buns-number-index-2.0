@@ -75,13 +75,35 @@ html, body {
 /*headers*/
 header {
     text-align: center;
-    margin: 0 auto;
+}
+
+.header {
+	display: inline-flex;
+	flex-direction: row;
+	padding-top: 1.5em;
+	justify-content: center;
+	align-items: center:
+}
+
+.header-background {
+	display:flex;
+	width: 60%;
+}
+
+.header-background > a, .header-background > a > img {
+	width: 100%;
 }
 
 .headimg {
-  position: absolute; 
-  top: 140PX; 
-  right: 280px;
+	padding-top: 6.5em;
+	display:flex;
+	width: 20%;
+	position: absolute; 
+	right: 15%;
+}
+
+.headimg > a, .headimg > a > img {
+	width: 100%;
 }
 
 /*this is currently unused but will be for the navbar*/
@@ -295,7 +317,7 @@ iframe {
   cursor: default;
 }
 
-.tooltip .tooltiptext {
+.tooltip .tooltiptext, .headimg a .tooltiptext {
   visibility: hidden;
   padding: 0.25em 0.5em;
   background-color: black;
@@ -308,12 +330,21 @@ iframe {
   position: absolute;
   z-index: 1;
   top: 100%;
-  left: 100%;
+  right: 100%;
   transition-property: visibility;
   transition-delay: 0s;
 }
 
-.tooltip:hover .tooltiptext {
+.headimg a .tooltiptext {
+	position: absolute;
+	z-index: 1;
+	top: 100%;
+	right: 50%;
+	transition-property: visibility;
+	transition-delay: 0s;
+}
+
+.tooltip:hover .tooltiptext, .headimg:hover a .tooltiptext {
   visibility: visible;
   transition-delay: 0.1s;
 }

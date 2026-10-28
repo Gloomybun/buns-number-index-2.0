@@ -732,3 +732,42 @@ body {
   position: relative;
   width: 100%;
 }
+
+.laby-source {
+	position: relative;
+}
+
+.laby-source-wrapper {
+	display: block;
+	margin: 0 auto 0 auto;
+	width: 70rem;
+	position: relative;
+	max-width: 100%;
+	border-radius: inherit;
+	background: hsla(231, 40%, 31%, 1);
+	background: linear-gradient(to bottom, hsla(231, 40%, 31%, 1) 0%, hsla(220, 100%, 2%, 1) 100%);
+	background: -moz-linear-gradient(to bottom, hsla(231, 40%, 31%, 1) 0%, hsla(220, 100%, 2%, 1) 100%);
+	background: -webkit-linear-gradient(to bottom, hsla(231, 40%, 31%, 1) 0%, hsla(220, 100%, 2%, 1) 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2F386E", endColorstr="#000309", GradientType=1 );
+}
+
+.laby-source-inner {
+  flex-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 0rem;
+  position: relative;
+  max-width: 100%;
+  border-radius: inherit;
+  text-align: center;
+}
+
+.laby-source-inner > .section-1 {
+	display: flex;
+	color: white;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	text-align: center;
+}
